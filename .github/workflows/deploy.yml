@@ -26,7 +26,10 @@ jobs:
             cd /var/www/la-banquinha
 
             # 2. Puxa as últimas mudanças
-            git pull origin main
+            git fetch origin
+            git reset --hard origin/$DEPLOY_BRANCH
+
+            git clean -fd
 
             # 3. Instala/Atualiza dependências
             npm install --production
