@@ -1,0 +1,304 @@
+<div class="offers-page">
+    <!-- Header -->
+    <section class="page-header section-sm">
+        <div class="container">
+            <div class="page-header-content text-center">
+                <h1>Ofertas Especiais</h1>
+                <p class="text-lead">Aproveite nossas promoções exclusivas com descontos imperdíveis</p>
+                <div class="offer-timer" id="offer-timer">
+                    <div class="timer-item">
+                        <span class="timer-number" id="days">00</span>
+                        <span class="timer-label">Dias</span>
+                    </div>
+                    <div class="timer-item">
+                        <span class="timer-number" id="hours">00</span>
+                        <span class="timer-label">Horas</span>
+                    </div>
+                    <div class="timer-item">
+                        <span class="timer-number" id="minutes">00</span>
+                        <span class="timer-label">Minutos</span>
+                    </div>
+                    <div class="timer-item">
+                        <span class="timer-number" id="seconds">00</span>
+                        <span class="timer-label">Segundos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ofertas em Destaque -->
+    <section class="featured-offers section-sm">
+        <div class="container">
+            <h2 class="section-title">Ofertas em Destaque</h2>
+            <div class="offers-grid-large">
+                <div class="featured-offer-card mega-offer">
+                    <div class="offer-badge">🔥 OFERTA RELÂMPAGO</div>
+                    <div class="offer-content">
+                        <h3>Kit Completo Iniciante + Juice Grátis</h3>
+                        <p class="offer-description">Perfecto para quem está começando no mundo do vapor</p>
+                        
+                        <div class="offer-pricing">
+                            <div class="price-comparison">
+                                <span class="original-price">R$ 349,90</span>
+                                <span class="discount-badge">-40%</span>
+                            </div>
+                            <div class="final-price">R$ 209,90</div>
+                            <div class="installment">ou 6x de R$ 34,98</div>
+                        </div>
+                        
+                        <div class="offer-includes">
+                            <h4>O Kit Inclui:</h4>
+                            <ul>
+                                <li>✓ 1x Device Voopoo Argus Pro</li>
+                                <li>✓ 2x Resistências extras</li>
+                                <li>✓ 1x Juice Sadboy 60ml (grátis)</li>
+                                <li>✓ 1x Cabo USB-C</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="offer-stats">
+                            <div class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>+120 vendidos</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>Oferta termina em breve</span>
+                            </div>
+                        </div>
+                        
+                        <div class="offer-actions">
+                            <button class="btn btn-primary btn-lg">
+                                <i class="fas fa-bolt"></i>
+                                Comprar Agora
+                            </button>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-heart"></i>
+                                Favoritar
+                            </button>
+                        </div>
+                    </div>
+                    <div class="offer-image">
+                        <img src="images/ofertas/kit-completo.jpg" alt="Kit Completo Iniciante">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Todas as Ofertas -->
+    <section class="all-offers section">
+        <div class="container">
+            <h2 class="section-title">Todas as Ofertas</h2>
+            <div class="offers-grid" id="offers-grid">
+                <!-- Ofertas serão carregadas via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner de Newsletter -->
+    <section class="newsletter-offer section-sm">
+        <div class="container">
+            <div class="newsletter-card">
+                <div class="newsletter-content">
+                    <h3>🎁 Oferta Exclusiva para Assinantes</h3>
+                    <p>Cadastre-se e ganhe <strong>10% OFF</strong> na primeira compra + acesso a promoções antecipadas</p>
+                    
+                    <form class="newsletter-form" id="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Seu melhor e-mail" required>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-gift"></i>
+                                Quero Oferta
+                            </button>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="newsletter-agree" required>
+                            <label for="newsletter-agree">
+                                Concordo em receber ofertas e novidades
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="newsletter-badge">
+                    <span>10% OFF</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+// Script específico da página de ofertas
+window.offersPage = {
+    init: function() {
+        this.startCountdown();
+        this.loadOffers();
+        this.initializeNewsletter();
+    },
+    
+    startCountdown: function() {
+        // Contador regressivo para 3 dias a partir de agora
+        const countDownDate = new Date();
+        countDownDate.setDate(countDownDate.getDate() + 3);
+        
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById('offer-timer').innerHTML = '<div class="timer-expired">Oferta Expirada</div>';
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }, 1000);
+    },
+    
+    loadOffers: function() {
+        const offers = [
+            {
+                id: 1,
+                title: "Combo Pods + Juice",
+                description: "Leve 2 pods + 1 juice de 60ml",
+                originalPrice: 149.90,
+                discountPrice: 99.90,
+                discount: 33,
+                image: "images/ofertas/combo-pods-juice.jpg",
+                tag: "Mais Procurado",
+                itemsLeft: 15
+            },
+            {
+                id: 2,
+                title: "Pods Descartáveis - Leve 3 Pague 2",
+                description: "Promoção válida para todas as marcas",
+                originalPrice: 147.00,
+                discountPrice: 98.00,
+                discount: 33,
+                image: "images/ofertas/pods-3-2.jpg",
+                tag: "Promoção",
+                itemsLeft: 8
+            },
+            {
+                id: 3,
+                title: "Resistências - Pacote com 10 unidades",
+                description: "Economize comprando em quantidade",
+                originalPrice: 79.80,
+                discountPrice: 59.90,
+                discount: 25,
+                image: "images/ofertas/resistencias-pack.jpg",
+                tag: "Essencial",
+                itemsLeft: 25
+            },
+            {
+                id: 4,
+                title: "Juice Premium - 30% OFF",
+                description: "Marcas importadas com desconto especial",
+                originalPrice: 89.90,
+                discountPrice: 62.93,
+                discount: 30,
+                image: "images/ofertas/juice-premium.jpg",
+                tag: "Importado",
+                itemsLeft: 12
+            }
+        ];
+        
+        const grid = document.getElementById('offers-grid');
+        if (grid) {
+            grid.innerHTML = offers.map(offer => `
+                <div class="offer-card-large fade-in-up">
+                    <div class="offer-badge">${offer.tag}</div>
+                    
+                    <div class="offer-image">
+                        <img src="${offer.image}" alt="${offer.title}">
+                    </div>
+                    
+                    <div class="offer-content">
+                        <h3>${offer.title}</h3>
+                        <p class="offer-description">${offer.description}</p>
+                        
+                        <div class="offer-pricing">
+                            <div class="price-comparison">
+                                <span class="original-price">R$ ${offer.originalPrice.toFixed(2)}</span>
+                                <span class="discount-percent">-${offer.discount}%</span>
+                            </div>
+                            <div class="final-price">R$ ${offer.discountPrice.toFixed(2)}</div>
+                            <div class="installment">ou 3x de R$ ${(offer.discountPrice / 3).toFixed(2)}</div>
+                        </div>
+                        
+                        <div class="offer-stock">
+                            <div class="stock-info">
+                                <i class="fas fa-box"></i>
+                                <span>${offer.itemsLeft} unidades restantes</span>
+                            </div>
+                            <div class="stock-bar">
+                                <div class="stock-progress" style="width: ${(offer.itemsLeft / 30) * 100}%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="offer-actions">
+                            <button class="btn btn-primary" onclick="offersPage.buyOffer(${offer.id})">
+                                <i class="fas fa-shopping-cart"></i>
+                                Comprar Oferta
+                            </button>
+                            <button class="btn btn-outline" onclick="offersPage.shareOffer(${offer.id})">
+                                <i class="fas fa-share"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+    },
+    
+    initializeNewsletter: function() {
+        const form = document.getElementById('newsletter-form');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                this.subscribeNewsletter();
+            });
+        }
+    },
+    
+    subscribeNewsletter: function() {
+        const email = document.querySelector('#newsletter-form input[type="email"]').value;
+        
+        // Simular cadastro
+        setTimeout(() => {
+            router.showNotification('🎉 Cadastrado com sucesso! Cupom de 10% OFF enviado para seu e-mail.', 'success');
+            document.querySelector('#newsletter-form').reset();
+        }, 1000);
+    },
+    
+    buyOffer: function(offerId) {
+        // Adicionar ao carrinho e redirecionar
+        cart.addItem(offerId);
+        router.navigate('/checkout');
+    },
+    
+    shareOffer: function(offerId) {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Oferta Imperdível - La Banquinha',
+                text: 'Confira esta oferta especial na La Banquinha!',
+                url: window.location.origin + '/oferta/' + offerId
+            });
+        } else {
+            // Fallback para copiar link
+            navigator.clipboard.writeText(window.location.origin + '/oferta/' + offerId);
+            router.showNotification('Link copiado para a área de transferência!', 'success');
+        }
+    }
+};
+</script>

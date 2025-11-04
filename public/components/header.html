@@ -1,0 +1,81 @@
+<!-- Header Component -->
+<header class="header" id="main-header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="/" aria-label="La Banquinha - Página Inicial">
+                    <img src="images/logo.png" alt="La Banquinha Tabacaria" width="180" height="60">
+                </a>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="nav" aria-label="Navegação principal">
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link" data-page="home">Início</a></li>
+                    <li><a href="/produtos" class="nav-link" data-page="produtos">Produtos</a></li>
+                    <li><a href="/ofertas" class="nav-link" data-page="ofertas">Ofertas</a></li>
+                    <li><a href="/sobre" class="nav-link" data-page="sobre">Sobre</a></li>
+                    <li><a href="/contato" class="nav-link" data-page="contato">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Search Button -->
+                <button class="search-btn" aria-label="Pesquisar produtos" id="search-toggle">
+                    <i class="fas fa-search"></i>
+                </button>
+                
+                <!-- Cart Button -->
+                <button class="cart-btn" aria-label="Abrir carrinho" id="cart-toggle">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" aria-label="Menu mobile" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="search-bar" id="search-bar">
+            <div class="search-container">
+                <input type="text" placeholder="O que você está procurando?" id="search-input">
+                <button class="search-close" id="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+    
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button class="cart-close" id="cart-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-content" id="cart-content">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">R$ 0,00</span>
+            </div>
+            <button class="btn btn-primary btn-checkout" id="checkout-btn">
+                Finalizar Pedido
+            </button>
+        </div>
+    </div>
+    
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+</header>
