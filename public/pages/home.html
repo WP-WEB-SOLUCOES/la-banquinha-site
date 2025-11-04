@@ -3,8 +3,8 @@
     <div class="container">
         <div class="hero-content">
             <div class="hero-badge">⭐ Loja Especializada em Vapor</div>
-            <h1 class="hero-title">A Melhor Experiência em Vapor</h1>
-            <p class="hero-subtitle">Produtos premium com entrega rápida em Contagem e região. As melhores marcas com qualidade garantida.</p>
+            <h1 class="hero-title">La Banquinha - Sua Vapor Store Premium</h1>
+            <p class="hero-subtitle">Os melhores produtos de vapor, essências, pods e acessórios com entrega rápida em Contagem e região. Qualidade garantida e preços imbatíveis!</p>
             <div class="hero-badges">
                 <span class="badge">🚚 Entrega em até 2h</span>
                 <span class="badge">💳 Parcele em 6x sem juros</span>
@@ -24,46 +24,120 @@
     </div>
 </section>
 
-<!-- Categorias -->
-<section class="categories section">
+<!-- Banners de Categoria Full Width -->
+<section class="category-banners">
+    <!-- Banner Tabacaria -->
+    <div class="category-banner fade-in-up" style="background: linear-gradient(rgba(15, 15, 15, 0.85), rgba(15, 15, 15, 0.85)), url('images/banners/tabacaria-bg.jpg');">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <span class="category-tag">Tabacaria</span>
+                    <h2>Produtos Premium para Conhecedores</h2>
+                    <p>Charutos importados, fumo de qualidade, acessórios exclusivos e tudo que você precisa para momentos especiais.</p>
+                    <a href="/produtos?categoria=tabacaria" class="btn btn-primary">
+                        Explorar Tabacaria
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="banner-image">
+                    <img src="images/banners/tabacaria-product.png" alt="Produtos de Tabacaria" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Banner Pods -->
+    <div class="category-banner fade-in-up" style="background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)), url('images/banners/pods-bg.jpg');">
+        <div class="container">
+            <div class="banner-content reverse">
+                <div class="banner-text">
+                    <span class="category-tag">Pods Descartáveis</span>
+                    <h2>+50 Modelos das Melhores Marcas</h2>
+                    <p>Elf Bar, Lost Mary, Igget e muito mais. Praticidade, design e sabor incomparáveis para seu dia a dia.</p>
+                    <a href="/produtos?categoria=pods" class="btn btn-primary">
+                        Ver Pods
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="banner-image">
+                    <img src="images/banners/pods-product.png" alt="Pods Descartáveis" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Banner Essências -->
+    <div class="category-banner fade-in-up" style="background: linear-gradient(rgba(15, 15, 15, 0.85), rgba(15, 15, 15, 0.85)), url('images/banners/essencias-bg.jpg');">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <span class="category-tag">Essências</span>
+                    <h2>Descubra Sabores Únicos</h2>
+                    <p>Nacionais e importadas com os melhores sabores. Experimente nossa linha exclusiva de juices premium.</p>
+                    <a href="/produtos?categoria=essencia" class="btn btn-primary">
+                        Descobrir Sabores
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="banner-image">
+                    <img src="images/banners/essencia-product.png" alt="Essências para Vapor" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção Download App (será ocultada em iPhones via JS) -->
+<section class="app-download section" id="app-download-section">
     <div class="container">
-        <h2 class="section-title">Nossas Categorias</h2>
-        <div class="categories-grid">
-            <a href="/produtos?categoria=pods" class="category-card fade-in-up">
-                <div class="category-icon">
-                    <i class="fas fa-smoking"></i>
+        <div class="app-content">
+            <div class="app-text fade-in-up">
+                <h2 class="section-title">Baixe Nosso App</h2>
+                <p class="app-description">Tenha a La Banquinha na palma da sua mão! Faça pedidos rapidamente, acompanhe entregas em tempo real e receba ofertas exclusivas.</p>
+                
+                <div class="app-features">
+                    <div class="app-feature">
+                        <i class="fas fa-bolt"></i>
+                        <span>Pedidos rápidos em 2 toques</span>
+                    </div>
+                    <div class="app-feature">
+                        <i class="fas fa-tag"></i>
+                        <span>Ofertas exclusivas para app</span>
+                    </div>
+                    <div class="app-feature">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>Acompanhe sua entrega em tempo real</span>
+                    </div>
+                    <div class="app-feature">
+                        <i class="fas fa-gift"></i>
+                        <span>Programa de pontos e recompensas</span>
+                    </div>
                 </div>
-                <h3>Pods Descartáveis</h3>
-                <p>+50 modelos disponíveis</p>
-                <span class="category-cta">Explorar →</span>
-            </a>
+                
+                <div class="download-buttons">
+                    <a href="/download/app.apk" class="download-btn apk-btn" download>
+                        <div class="btn-icon">
+                            <i class="fab fa-android"></i>
+                        </div>
+                        <div class="btn-text">
+                            <span>Baixe diretamente</span>
+                            <strong>Arquivo APK</strong>
+                        </div>
+                    </a>
+                    
+                    <div class="download-info">
+                        <p><i class="fas fa-info-circle"></i> Instale o APK e tenha acesso completo</p>
+                    </div>
+                </div>
+            </div>
             
-            <a href="/produtos?categoria=juices" class="category-card fade-in-up">
-                <div class="category-icon">
-                    <i class="fas fa-tint"></i>
+            <div class="app-preview fade-in-up">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <img src="images/app-preview.jpg" alt="Preview do App La Banquinha" loading="lazy">
+                    </div>
                 </div>
-                <h3>Juices & Liquids</h3>
-                <p>Nacionais e importados</p>
-                <span class="category-cta">Explorar →</span>
-            </a>
-            
-            <a href="/produtos?categoria=mods" class="category-card fade-in-up">
-                <div class="category-icon">
-                    <i class="fas fa-cogs"></i>
-                </div>
-                <h3>Mods & Kits</h3>
-                <p>Equipamentos completos</p>
-                <span class="category-cta">Explorar →</span>
-            </a>
-            
-            <a href="/produtos?categoria=acessorios" class="category-card fade-in-up">
-                <div class="category-icon">
-                    <i class="fas fa-tools"></i>
-                </div>
-                <h3>Acessórios</h3>
-                <p>Resistências e coils</p>
-                <span class="category-cta">Explorar →</span>
-            </a>
+            </div>
         </div>
     </div>
 </section>
@@ -84,124 +158,13 @@
     </div>
 </section>
 
-<!-- Ofertas Especiais -->
-<section class="offers section">
-    <div class="container">
-        <h2 class="section-title">Ofertas Especiais</h2>
-        <div class="offers-grid">
-            <div class="offer-card highlight fade-in-up">
-                <div class="offer-badge">🔥 Mais Vendido</div>
-                <h3>Kit Iniciante Vapor Premium</h3>
-                <p class="offer-desc">Tudo que você precisa para começar</p>
-                <div class="offer-price">
-                    <span class="old-price">R$ 299,90</span>
-                    <span class="new-price">R$ 199,90</span>
-                </div>
-                <p class="offer-savings">Economize R$ 100,00</p>
-                <a href="/produtos/kit-iniciante" class="btn btn-primary">
-                    <i class="fas fa-bolt"></i>
-                    Aproveitar Oferta
-                </a>
-            </div>
-            
-            <div class="offer-card fade-in-up">
-                <div class="offer-badge">💨 Promoção</div>
-                <h3>Pods Descartáveis</h3>
-                <p class="offer-desc">Leve 3 e Pague 2</p>
-                <div class="offer-includes">
-                    <p>✓ Escolha entre 10 sabores</p>
-                    <p>✓ Marcas premium</p>
-                    <p>✓ Entrega grátis</p>
-                </div>
-                <a href="/produtos?promocao=pods-3-2" class="btn btn-secondary">
-                    <i class="fas fa-gift"></i>
-                    Ver Detalhes
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Por que Escolher a La Banquinha -->
-<section class="about section">
-    <div class="container">
-        <div class="about-content">
-            <div class="about-text">
-                <h2 class="section-title">Por que Escolher a La Banquinha?</h2>
-                <div class="features">
-                    <div class="feature fade-in-up">
-                        <i class="fas fa-shield-alt"></i>
-                        <div>
-                            <h4>Produtos 100% Originais</h4>
-                            <p>Garantia de autenticidade e qualidade em todos os produtos. Trabalhamos apenas com marcas reconhecidas e fornecedores autorizados.</p>
-                        </div>
-                    </div>
-                    <div class="feature fade-in-up">
-                        <i class="fas fa-shipping-fast"></i>
-                        <div>
-                            <h4>Entrega Rápida</h4>
-                            <p>Entregamos em até 2 horas na região de Contagem. Pedidos acima de R$ 50,00 têm frete grátis.</p>
-                        </div>
-                    </div>
-                    <div class="feature fade-in-up">
-                        <i class="fas fa-headset"></i>
-                        <div>
-                            <h4>Suporte Especializado</h4>
-                            <p>Nossa equipe é formada por especialistas em vapor. Tire todas suas dúvidas e receba recomendações personalizadas.</p>
-                        </div>
-                    </div>
-                    <div class="feature fade-in-up">
-                        <i class="fas fa-award"></i>
-                        <div>
-                            <h4>Melhor Preço</h4>
-                            <p>Preços competitivos e condições especiais de pagamento. Parcele em até 6x sem juros no cartão.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="about-stats">
-                <div class="stat fade-in-up">
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label">Clientes Satisfeitos</span>
-                </div>
-                <div class="stat fade-in-up">
-                    <span class="stat-number">100+</span>
-                    <span class="stat-label">Produtos</span>
-                </div>
-                <div class="stat fade-in-up">
-                    <span class="stat-number">4.9</span>
-                    <span class="stat-label">Avaliação Média</span>
-                </div>
-                <div class="stat fade-in-up">
-                    <span class="stat-number">2h</span>
-                    <span class="stat-label">Entrega Média</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Marcas que Trabalhamos -->
-<section class="brands-section section">
-    <div class="container">
-        <h2 class="section-title">Marcas Premium</h2>
-        <div class="brands-grid">
-            <div class="brand-logo">ELF BAR</div>
-            <div class="brand-logo">LOST MARY</div>
-            <div class="brand-logo">IGGET</div>
-            <div class="brand-logo">VOOPOO</div>
-            <div class="brand-logo">GEEKVAPE</div>
-            <div class="brand-logo">UWELL</div>
-        </div>
-    </div>
-</section>
-
 <script>
 // Script específico da home
 window.homePage = {
     init: function() {
         this.loadFeaturedProducts();
         this.initializeAnimations();
+        this.checkDeviceForAppSection();
     },
     
     loadFeaturedProducts: function() {
@@ -216,10 +179,10 @@ window.homePage = {
             },
             {
                 id: 2,
-                name: "Juice Importado Sadboy 100ml - Butter Cookie",
+                name: "Essência Importada Sadboy 100ml - Butter Cookie",
                 price: 89.90,
                 image: "images/produtos/sadboy-butter-cookie.jpg",
-                category: "juices",
+                category: "essencia",
                 badge: "Novidade"
             },
             {
@@ -248,7 +211,7 @@ window.homePage = {
                     <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy">
                     <div class="product-info">
                         <h3 class="product-title">${product.name}</h3>
-                        <div class="product-price">${product.price.toFixed(2)}</div>
+                        <div class="product-price">R$ ${product.price.toFixed(2)}</div>
                         <div class="product-actions">
                             <button class="btn btn-primary add-to-cart" onclick="cart.addItem(${product.id})">
                                 <i class="fas fa-shopping-cart"></i>
@@ -282,6 +245,387 @@ window.homePage = {
         document.querySelectorAll('.fade-in-up').forEach(el => {
             observer.observe(el);
         });
+    },
+    
+    checkDeviceForAppSection: function() {
+        const userAgent = navigator.userAgent;
+        const IsIOS = false
+        if (userAgent.includes("iPhone") || userAgent.includes("iPad") || userAgent.includes("iPod")) {
+            IsIOS = true;
+        }
+        console.log(IsIOS)
+        const appSection = document.getElementById('app-download-section');
+        
+        if (isIOS && appSection) {
+            appSection.style.display = 'none';
+        }
     }
 };
 </script>
+
+<style>
+/* Estilos para os novos elementos */
+
+/* Banners de Categoria Full Width - ALTURA AUMENTADA */
+.category-banners {
+    width: 100%;
+}
+
+.category-banner {
+    width: 100%;
+    min-height: 650px; /* Altura aumentada */
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem; /* Gap aumentado */
+    align-items: center;
+    padding: 6rem 0; /* Padding vertical aumentado */
+}
+
+.banner-content.reverse {
+    direction: rtl;
+}
+
+.banner-content.reverse > * {
+    direction: ltr;
+}
+
+.category-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--background);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2rem;
+}
+
+.banner-text h2 {
+    font-size: clamp(2.8rem, 5vw, 4.5rem); /* Tamanho aumentado */
+    margin-bottom: 2rem; /* Margin aumentada */
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+}
+
+.banner-text p {
+    font-size: 1.4rem; /* Tamanho aumentado */
+    color: var(--text-muted);
+    margin-bottom: 3rem; /* Margin aumentada */
+    line-height: 1.7;
+}
+
+.banner-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; /* Padding adicionado */
+}
+
+.banner-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 450px; /* Altura aumentada */
+    object-fit: contain;
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.6));
+    transition: transform 0.5s ease;
+}
+
+.category-banner:hover .banner-image img {
+    transform: translateY(-15px) scale(1.08);
+}
+
+/* Seção Download do App */
+.app-download {
+    background: var(--surface);
+    position: relative;
+    overflow: hidden;
+}
+
+.app-download::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.app-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem; /* Gap aumentado */
+    align-items: center;
+}
+
+.app-text {
+    padding-right: 3rem; /* Padding aumentado */
+}
+
+.app-description {
+    font-size: 1.3rem; /* Tamanho aumentado */
+    color: var(--text-muted);
+    margin-bottom: 3.5rem; /* Margin aumentada */
+    line-height: 1.7;
+}
+
+.app-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem; /* Gap aumentado */
+    margin-bottom: 3.5rem; /* Margin aumentada */
+}
+
+.app-feature {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem; /* Gap aumentado */
+    padding: 1.25rem 2rem; /* Padding aumentado */
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.app-feature:hover {
+    border-color: var(--primary);
+    transform: translateX(10px); /* Efeito aumentado */
+}
+
+.app-feature i {
+    color: var(--primary);
+    font-size: 1.7rem; /* Tamanho aumentado */
+    width: 35px; /* Largura aumentada */
+}
+
+.app-feature span {
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 1.1rem; /* Tamanho aumentado */
+}
+
+.download-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Gap aumentado */
+}
+
+.download-btn {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Gap aumentado */
+    padding: 1.5rem 2rem; /* Padding aumentado */
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--text);
+    transition: var(--transition);
+    min-width: 280px; /* Largura aumentada */
+}
+
+.download-btn:hover:not(.disabled) {
+    border-color: var(--primary);
+    transform: translateY(-5px); /* Efeito aumentado */
+    box-shadow: var(--shadow-lg);
+}
+
+.apk-btn:hover {
+    border-color: #34A853;
+    box-shadow: 0 12px 32px rgba(52, 168, 83, 0.3);
+}
+
+.btn-icon {
+    font-size: 2.5rem; /* Tamanho aumentado */
+}
+
+.btn-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-text span {
+    font-size: 0.9rem; /* Tamanho ajustado */
+    color: var(--text-muted);
+}
+
+.btn-text strong {
+    font-size: 1.3rem; /* Tamanho aumentado */
+    color: var(--text-light);
+}
+
+.apk-btn .btn-icon {
+    color: #34A853; /* Cor do Android */
+}
+
+.download-info {
+    background: var(--card-bg);
+    padding: 1.5rem; /* Padding aumentado */
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border);
+}
+
+.download-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.download-info i {
+    color: var(--primary);
+}
+
+/* Phone Mockup */
+.app-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; /* Padding adicionado */
+}
+
+.phone-mockup {
+    position: relative;
+    width: 320px; /* Largura aumentada */
+    height: 650px; /* Altura aumentada */
+    background: var(--card-bg);
+    border-radius: 45px; /* Border radius aumentado */
+    padding: 15px; /* Padding aumentado */
+    box-shadow: 
+        var(--shadow-lg),
+        inset 0 0 0 3px var(--border), /* Espessura aumentada */
+        inset 0 0 0 6px var(--surface); /* Espessura aumentada */
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: var(--surface);
+    border-radius: 35px; /* Border radius aumentado */
+    overflow: hidden;
+    position: relative;
+}
+
+.phone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsividade */
+@media (max-width: 1100px) {
+    .banner-content {
+        gap: 4rem;
+        padding: 5rem 0;
+    }
+    
+    .app-content {
+        gap: 5rem;
+    }
+}
+
+@media (max-width: 968px) {
+    .category-banner {
+        min-height: 550px;
+    }
+    
+    .banner-content {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+        text-align: center;
+        padding: 4rem 0;
+    }
+    
+    .banner-content.reverse {
+        direction: ltr;
+    }
+    
+    .app-content {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        text-align: center;
+    }
+    
+    .app-text {
+        padding-right: 0;
+    }
+    
+    .download-buttons {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .category-banner {
+        min-height: 500px;
+    }
+    
+    .banner-text h2 {
+        font-size: 2.8rem;
+    }
+    
+    .banner-text p {
+        font-size: 1.2rem;
+    }
+    
+    .banner-image img {
+        max-height: 350px;
+    }
+    
+    .phone-mockup {
+        width: 280px;
+        height: 560px;
+    }
+    
+    .app-feature {
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-banner {
+        min-height: 450px;
+    }
+    
+    .banner-content {
+        padding: 3rem 0;
+    }
+    
+    .banner-text h2 {
+        font-size: 2.2rem;
+    }
+    
+    .download-btn {
+        width: 100%;
+        max-width: 100%;
+        min-width: auto;
+    }
+    
+    .phone-mockup {
+        width: 250px;
+        height: 500px;
+        border-radius: 35px;
+    }
+    
+    .phone-screen {
+        border-radius: 25px;
+    }
+}
+</style>
