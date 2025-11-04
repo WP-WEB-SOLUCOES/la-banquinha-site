@@ -1,0 +1,37 @@
+# .github/workflows/deploy.yml (Para o Site Node.js)
+name: Auto Deploy - La Banquinha Site
+
+on:
+  push:
+    branches:
+      - main  # 🎯 Mantenha esta branch sincronizada com sua branch de produção
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Código
+        uses: actions/checkout@v4
+
+      - name: Deploy e Reinício do Node.js
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # --- Comandos executados na VPS ---
+
+            # 1. Navega para o diretório do projeto Node.js
+            cd /var/www/la-banquinha
+
+            # 2. Puxa as últimas mudanças
+            git pull origin main
+
+            # 3. Instala/Atualiza dependências
+            npm install --production
+
+            # 4. Reinicia o processo PM2 do site
+            pm2 restart la-banquinha-site
+
+            echo "Deploy do Site Node.js concluído!"
