@@ -1,421 +1,85 @@
-<div class="products-page">
-    <!-- Header da Página -->
-    <section class="page-header section-sm">
+<div class="products-page-wrapper dark-theme">
+    <section class="products-header">
         <div class="container">
-            <div class="page-header-content">
-                <h1>Nossos Produtos</h1>
-                <p class="text-lead">Encontre os melhores produtos para vapor com qualidade garantida</p>
+            <div class="header-content">
+                <div class="header-text">
+                    <span class="header-subtitle">Premium Vapes & Pods</span>
+                    <h1>Catálogo Exclusivo</h1>
+                    <p>A melhor seleção de hardware e juices do mercado.</p>
+                </div>
                 
-                <!-- Filtros e Ordenação -->
-                <div class="products-controls">
-                    <div class="filter-section">
-                        <button class="btn btn-outline" id="filter-toggle">
-                            <i class="fas fa-filter"></i>
-                            Filtrar
-                        </button>
-                        
-                        <div class="sort-select">
-                            <select id="sort-products">
-                                <option value="popular">Mais Populares</option>
-                                <option value="price-asc">Menor Preço</option>
-                                <option value="price-desc">Maior Preço</option>
-                                <option value="name">Ordem Alfabética</option>
-                                <option value="newest">Mais Recentes</option>
-                            </select>
-                        </div>
-                    </div>
+                <div class="header-actions">
+                    <button class="btn-filter-mobile" id="filter-toggle">
+                        <i class="fas fa-filter"></i> Filtros
+                    </button>
                     
-                    <div class="results-info">
-                        <span id="products-count">Carregando...</span>
+                    <div class="custom-select-wrapper">
+                        <select id="sort-products" class="custom-select">
+                            <option value="newest">Lançamentos</option>
+                            <option value="price-asc">Preço: Menor para Maior</option>
+                            <option value="price-desc">Preço: Maior para Menor</option>
+                            <option value="name">Nome (A-Z)</option>
+                        </select>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Conteúdo Principal -->
-    <section class="products-main section-sm">
-        <div class="container">
-            <div class="products-layout">
-                <!-- Sidebar de Filtros -->
-                <aside class="products-sidebar" id="products-sidebar">
-                    <div class="sidebar-header">
-                        <h3>Filtros</h3>
-                        <button class="sidebar-close" id="sidebar-close">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                    
-                    <!-- Filtro por Categoria -->
-                    <div class="filter-group">
-                        <h4>Categorias</h4>
-                        <div class="filter-options">
-                            <label class="filter-option">
-                                <input type="checkbox" name="category" value="pods" checked>
-                                <span class="checkmark"></span>
-                                Pods Descartáveis
-                                <span class="count">(24)</span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="category" value="juices" checked>
-                                <span class="checkmark"></span>
-                                Juices & Liquids
-                                <span class="count">(36)</span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="category" value="mods" checked>
-                                <span class="checkmark"></span>
-                                Mods & Kits
-                                <span class="count">(15)</span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="category" value="acessorios" checked>
-                                <span class="checkmark"></span>
-                                Acessórios
-                                <span class="count">(28)</span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <!-- Filtro por Marca -->
-                    <div class="filter-group">
-                        <h4>Marcas</h4>
-                        <div class="filter-options">
-                            <label class="filter-option">
-                                <input type="checkbox" name="brand" value="elfbar">
-                                <span class="checkmark"></span>
-                                Elf Bar
-                                <span class="count">(12)</span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="brand" value="lostmary">
-                                <span class="checkmark"></span>
-                                Lost Mary
-                                <span class="count">(8)</span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="brand" value="voopoo">
-                                <span class="checkmark"></span>
-                                Voopoo
-                                <span class="count">(6)</span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="brand" value="geekvape">
-                                <span class="checkmark"></span>
-                                Geekvape
-                                <span class="count">(9)</span>
-                            </label>
-                            <label class="filter-option">
-                                <input type="checkbox" name="brand" value="uwell">
-                                <span class="checkmark"></span>
-                                Uwell
-                                <span class="count">(7)</span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <!-- Filtro por Preço -->
-                    <div class="filter-group">
-                        <h4>Faixa de Preço</h4>
-                        <div class="price-range">
-                            <div class="range-values">
-                                <span>R$ 0</span>
-                                <span>R$ 500</span>
-                            </div>
-                            <input type="range" min="0" max="500" value="500" class="price-slider" id="price-slider">
-                        </div>
-                    </div>
-                    
-                    <!-- Botões de Ação -->
-                    <div class="filter-actions">
-                        <button class="btn btn-primary w-100" id="apply-filters">
-                            Aplicar Filtros
-                        </button>
-                        <button class="btn btn-outline w-100" id="clear-filters">
-                            Limpar Filtros
-                        </button>
-                    </div>
-                </aside>
-
-                <!-- Grid de Produtos -->
-                <main class="products-content">
-                    <div class="products-grid" id="products-grid">
-                        <!-- Produtos serão carregados via JavaScript -->
-                    </div>
-                    
-                    <!-- Paginação -->
-                    <div class="pagination" id="pagination">
-                        <button class="pagination-btn prev" disabled>
-                            <i class="fas fa-chevron-left"></i>
-                            Anterior
-                        </button>
-                        <div class="pagination-numbers">
-                            <span class="pagination-number active">1</span>
-                            <span class="pagination-number">2</span>
-                            <span class="pagination-number">3</span>
-                        </div>
-                        <button class="pagination-btn next">
-                            Próxima
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                </main>
+            
+            <div class="glow-separator"></div>
+            
+            <div class="results-bar">
+                <span id="products-count">
+                    <i class="fas fa-circle-notch fa-spin"></i> Carregando catálogo...
+                </span>
             </div>
         </div>
     </section>
+
+    <div class="container main-container">
+        <aside class="products-sidebar" id="products-sidebar">
+            <div class="sidebar-header-mobile">
+                <h3>Filtrar</h3>
+                <button class="close-sidebar" id="sidebar-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="sidebar-content">
+                <div class="filter-widget">
+                    <h4 class="widget-title"><i class="fas fa-tag"></i> Categorias</h4>
+                    <div class="filter-list" id="category-filters-container">
+                        <div style="color: #666; font-size: 0.8rem;">Carregando...</div>
+                    </div>
+                </div>
+
+                <div class="filter-widget">
+                    <h4 class="widget-title"><i class="fas fa-star"></i> Marcas</h4>
+                    <div class="filter-list" id="brand-filters-container">
+                        </div>
+                </div>
+
+                <div class="filter-widget">
+                    <div class="widget-header" style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <h4 class="widget-title" style="margin:0"><i class="fas fa-coins"></i> Preço Máximo</h4>
+                        <span class="price-value" id="price-value-display" style="color: #fff; font-weight: bold;">R$ 500</span>
+                    </div>
+                    <div class="range-slider-wrapper">
+                        <input type="range" min="0" max="1000" value="500" class="neon-slider" id="price-slider">
+                    </div>
+                </div>
+
+                <div class="filter-actions sticky-bottom">
+                    <button class="btn-neon" id="apply-filters">APLICAR FILTROS</button>
+                    <button class="btn-ghost" id="clear-filters">LIMPAR</button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="products-grid-area">
+            <div class="products-grid" id="products-grid">
+                </div>
+            
+            <div class="pagination-wrapper" id="pagination">
+                </div>
+        </main>
+    </div>
 </div>
-
-<script>
-// Script específico da página de produtos
-window.productsPage = {
-    currentPage: 1,
-    itemsPerPage: 12,
-    filters: {
-        category: ['pods', 'juices', 'mods', 'acessorios'],
-        brand: [],
-        maxPrice: 500
-    },
-    
-    init: function() {
-        this.loadProducts();
-        this.initializeFilters();
-        this.initializeSorting();
-    },
-    
-    loadProducts: function() {
-        // Simular carregamento de produtos
-        const products = this.generateSampleProducts();
-        this.displayProducts(products);
-        this.updateProductsCount(products.length);
-    },
-    
-    generateSampleProducts: function() {
-        const products = [];
-        const brands = ['Elf Bar', 'Lost Mary', 'Voopoo', 'Geekvape', 'Uwell', 'Igget'];
-        const categories = {
-            'pods': ['Pod Descartável', 'Disposable Pod'],
-            'juices': ['Juice Salt', 'Liquid Traditional', 'E-liquid Premium'],
-            'mods': ['Starter Kit', 'Advanced Mod', 'Pod System'],
-            'acessorios': ['Resistências', 'Coils', 'Baterias', 'Carregadores']
-        };
-        
-        for (let i = 1; i <= 48; i++) {
-            const categoryKeys = Object.keys(categories);
-            const category = categoryKeys[Math.floor(Math.random() * categoryKeys.length)];
-            const brand = brands[Math.floor(Math.random() * brands.length)];
-            const nameType = categories[category][Math.floor(Math.random() * categories[category].length)];
-            
-            products.push({
-                id: i,
-                name: `${brand} ${nameType} ${Math.floor(Math.random() * 1000)}`,
-                price: Math.floor(Math.random() * 400) + 20,
-                image: `images/produtos/product-${(i % 12) + 1}.jpg`,
-                category: category,
-                brand: brand.toLowerCase().replace(' ', ''),
-                inStock: Math.random() > 0.1,
-                isNew: Math.random() > 0.7,
-                isSale: Math.random() > 0.8
-            });
-        }
-        
-        return products;
-    },
-    
-    displayProducts: function(products) {
-        const grid = document.getElementById('products-grid');
-        if (!grid) return;
-        
-        const filteredProducts = this.applyFilters(products);
-        const sortedProducts = this.sortProducts(filteredProducts);
-        const paginatedProducts = this.paginateProducts(sortedProducts);
-        
-        grid.innerHTML = paginatedProducts.map(product => `
-            <div class="product-card">
-                ${product.isNew ? '<div class="product-badge badge-new">Novo</div>' : ''}
-                ${product.isSale ? '<div class="product-badge badge-sale">Oferta</div>' : ''}
-                ${!product.inStock ? '<div class="product-badge badge-out">Indisponível</div>' : ''}
-                
-                <img src="${product.image}" alt="${product.name}" class="product-image">
-                
-                <div class="product-info">
-                    <div class="product-category">${product.category}</div>
-                    <h3 class="product-title">${product.name}</h3>
-                    <div class="product-price">${product.price.toFixed(2)}</div>
-                    
-                    <div class="product-actions">
-                        <button class="btn btn-primary add-to-cart" 
-                                ${!product.inStock ? 'disabled' : ''}
-                                onclick="cart.addItem(${product.id})">
-                            <i class="fas fa-shopping-cart"></i>
-                            ${product.inStock ? 'Adicionar' : 'Indisponível'}
-                        </button>
-                        <button class="btn btn-outline" onclick="productsPage.viewProduct(${product.id})">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        `).join('');
-        
-        this.updatePagination(filteredProducts.length);
-    },
-    
-    applyFilters: function(products) {
-        return products.filter(product => {
-            // Filtro por categoria
-            if (this.filters.category.length > 0 && !this.filters.category.includes(product.category)) {
-                return false;
-            }
-            
-            // Filtro por marca
-            if (this.filters.brand.length > 0 && !this.filters.brand.includes(product.brand)) {
-                return false;
-            }
-            
-            // Filtro por preço
-            if (product.price > this.filters.maxPrice) {
-                return false;
-            }
-            
-            return true;
-        });
-    },
-    
-    sortProducts: function(products) {
-        const sortValue = document.getElementById('sort-products')?.value || 'popular';
-        
-        switch (sortValue) {
-            case 'price-asc':
-                return products.sort((a, b) => a.price - b.price);
-            case 'price-desc':
-                return products.sort((a, b) => b.price - a.price);
-            case 'name':
-                return products.sort((a, b) => a.name.localeCompare(b.name));
-            case 'newest':
-                return products.sort((a, b) => b.id - a.id);
-            default:
-                return products; // popular
-        }
-    },
-    
-    paginateProducts: function(products) {
-        const start = (this.currentPage - 1) * this.itemsPerPage;
-        const end = start + this.itemsPerPage;
-        return products.slice(start, end);
-    },
-    
-    initializeFilters: function() {
-        const filterToggle = document.getElementById('filter-toggle');
-        const sidebarClose = document.getElementById('sidebar-close');
-        const sidebar = document.getElementById('products-sidebar');
-        const applyFilters = document.getElementById('apply-filters');
-        const clearFilters = document.getElementById('clear-filters');
-        const priceSlider = document.getElementById('price-slider');
-        
-        if (filterToggle && sidebar) {
-            filterToggle.addEventListener('click', () => {
-                sidebar.classList.add('active');
-            });
-        }
-        
-        if (sidebarClose && sidebar) {
-            sidebarClose.addEventListener('click', () => {
-                sidebar.classList.remove('active');
-            });
-        }
-        
-        if (applyFilters) {
-            applyFilters.addEventListener('click', () => {
-                this.updateFilters();
-                this.loadProducts();
-                sidebar.classList.remove('active');
-            });
-        }
-        
-        if (clearFilters) {
-            clearFilters.addEventListener('click', () => {
-                this.resetFilters();
-                this.loadProducts();
-            });
-        }
-        
-        if (priceSlider) {
-            priceSlider.addEventListener('input', (e) => {
-                this.filters.maxPrice = parseInt(e.target.value);
-                document.querySelector('.range-values span:last-child').textContent = `R$ ${e.target.value}`;
-            });
-        }
-    },
-    
-    initializeSorting: function() {
-        const sortSelect = document.getElementById('sort-products');
-        if (sortSelect) {
-            sortSelect.addEventListener('change', () => {
-                this.loadProducts();
-            });
-        }
-    },
-    
-    updateFilters: function() {
-        // Atualizar filtros baseado nos checkboxes
-        const categoryCheckboxes = document.querySelectorAll('input[name="category"]:checked');
-        const brandCheckboxes = document.querySelectorAll('input[name="brand"]:checked');
-        
-        this.filters.category = Array.from(categoryCheckboxes).map(cb => cb.value);
-        this.filters.brand = Array.from(brandCheckboxes).map(cb => cb.value);
-    },
-    
-    resetFilters: function() {
-        this.filters = {
-            category: ['pods', 'juices', 'mods', 'acessorios'],
-            brand: [],
-            maxPrice: 500
-        };
-        
-        // Resetar UI
-        document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-            if (cb.name === 'category') {
-                cb.checked = true;
-            } else {
-                cb.checked = false;
-            }
-        });
-        
-        const priceSlider = document.getElementById('price-slider');
-        if (priceSlider) {
-            priceSlider.value = 500;
-            document.querySelector('.range-values span:last-child').textContent = 'R$ 500';
-        }
-    },
-    
-    updateProductsCount: function(count) {
-        const countElement = document.getElementById('products-count');
-        if (countElement) {
-            countElement.textContent = `${count} produtos encontrados`;
-        }
-    },
-    
-    updatePagination: function(totalProducts) {
-        const totalPages = Math.ceil(totalProducts / this.itemsPerPage);
-        const pagination = document.getElementById('pagination');
-        
-        if (!pagination) return;
-        
-        // Simplificado para demonstração
-        if (totalPages <= 1) {
-            pagination.style.display = 'none';
-        } else {
-            pagination.style.display = 'flex';
-        }
-    },
-    
-    viewProduct: function(productId) {
-        router.navigate(`/produto/${productId}`);
-    },
-    
-    changePage: function(page) {
-        this.currentPage = page;
-        this.loadProducts();
-    }
-};
-</script>

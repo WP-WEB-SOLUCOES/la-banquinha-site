@@ -1,93 +1,67 @@
-<!-- Footer Component -->
-<footer class="footer">
+<footer class="main-footer">
+    <div class="footer-glow"></div>
+
     <div class="container">
-        <div class="footer-content">
-            <!-- Brand Section -->
-            <div class="footer-section">
-                <img src="images/logo.png" alt="La Banquinha" class="footer-logo">
-                <p class="footer-description">
-                    A mais completa tabacaria de Contagem, especializada em produtos para vapor. 
-                    Qualidade, variedade e atendimento excepcional.
+        <div class="footer-grid">
+            <div class="footer-widget brand-widget">
+                <a href="/" class="footer-logo">
+                    <i class="fas fa-wind"></i> La Banquinha
+                </a>
+                <p class="footer-desc">
+                    Sua tabacaria premium. Os melhores pods, juices e acessórios com entrega rápida e atendimento especializado.
                 </p>
-                <div class="footer-payment">
-                    <h4>Formas de Pagamento</h4>
-                    <div class="payment-methods">
-                        <span>💳 Cartão</span>
-                        <span>📱 PIX</span>
-                        <span>💰 Dinheiro</span>
-                    </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
-            
-            <!-- Quick Links -->
-            <div class="footer-section">
-                <h4>Navegação</h4>
+
+            <div class="footer-widget">
+                <h4 class="footer-title">Navegação</h4>
                 <ul class="footer-links">
-                    <li><a href="/" class="footer-link">Início</a></li>
-                    <li><a href="/produtos" class="footer-link">Todos os Produtos</a></li>
-                    <li><a href="/ofertas" class="footer-link">Ofertas</a></li>
-                    <li><a href="/sobre" class="footer-link">Sobre Nós</a></li>
-                    <li><a href="/contato" class="footer-link">Fale Conosco</a></li>
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/produtos">Produtos</a></li>
+                    <li><a href="/ofertas">Ofertas Especiais</a></li>
+                    <li><a href="/sobre">Quem Somos</a></li>
                 </ul>
             </div>
-            
-            <!-- Categories -->
-            <div class="footer-section">
-                <h4>Categorias</h4>
+
+            <div class="footer-widget">
+                <h4 class="footer-title">Suporte</h4>
                 <ul class="footer-links">
-                    <li><a href="/produtos?categoria=pods" class="footer-link">Pods Descartáveis</a></li>
-                    <li><a href="/produtos?categoria=juices" class="footer-link">Juices & Liquids</a></li>
-                    <li><a href="/produtos?categoria=mods" class="footer-link">Mods & Kits</a></li>
-                    <li><a href="/produtos?categoria=acessorios" class="footer-link">Acessórios</a></li>
-                    <li><a href="/produtos?categoria=resistências" class="footer-link">Resistências</a></li>
+                    <li><a href="#">Rastrear Pedido</a></li>
+                    <li><a href="#">Política de Troca</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="/contato">Fale Conosco</a></li>
                 </ul>
             </div>
-            
-            <!-- Contact & Social -->
-            <div class="footer-section">
-                <h4>Contato</h4>
-                <div class="footer-contact">
-                    <div class="contact-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <a href="https://wa.me/5531999999999" target="_blank">(31) 99999-9999</a>
+
+            <div class="footer-widget">
+                <h4 class="footer-title">Fique por dentro</h4>
+                <p class="footer-text">Receba ofertas exclusivas e novidades.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Inscrito com sucesso!');">
+                    <div class="input-group">
+                        <input type="email" placeholder="Seu e-mail" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Via Expressa Francisco Cleuton Lopes, 304 - Contagem, MG</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="far fa-clock"></i>
-                        <span>Seg-Sab: 9h-20h | Dom: 10h-18h</span>
-                    </div>
-                </div>
+                </form>
                 
-                <div class="footer-social">
-                    <h4>Siga-nos</h4>
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="TikTok">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
+                <div class="payment-methods">
+                    <span class="payment-title">Aceitamos:</span>
+                    <div class="payment-icons">
+                        <i class="fab fa-pix" title="Pix"></i>
+                        <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                        <i class="fab fa-cc-visa" title="Visa"></i>
+                        <i class="fas fa-credit-card" title="Outros"></i>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Footer Bottom -->
+
         <div class="footer-bottom">
-            <div class="footer-bottom-content">
-                <p>&copy; 2024 La Banquinha Tabacaria. Todos os direitos reservados.</p>
-                <div class="footer-legal">
-                    <a href="/politica-de-privacidade" class="legal-link">Política de Privacidade</a>
-                    <a href="/termos-de-uso" class="legal-link">Termos de Uso</a>
-                </div>
-            </div>
-            <p class="warning">⚠️ Venda proibida para menores de 18 anos</p>
+            <p>&copy; 2025 La Banquinha Tabacaria. Todos os direitos reservados.</p>
+            <p class="dev-credit">Desenvolvido com <i class="fas fa-bolt" style="color: var(--accent-color)"></i></p>
         </div>
     </div>
 </footer>
